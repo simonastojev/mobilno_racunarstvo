@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="tertiary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="tertiary">Repertoar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar showCancelButton="focus"></ion-searchbar>
+  <ion-list>
+      <app-performance-item *ngFor="let performance of performances" [performanceItem] = "performance"></app-performance-item>
+  </ion-list>
+</ion-content>

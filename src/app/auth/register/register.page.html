@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="tertiary">Registracija</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-content>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="3" offset-sm="2">
+          <ion-item>
+            <ion-label position="floating">Ime</ion-label>
+            <ion-input type="text" formControlName="name"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-sm="3" offset-sm="2">
+          <ion-item>
+            <ion-label position="floating">Prezime</ion-label>
+            <ion-input type="text" formControlName="surname"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Email adresa</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="registerForm.get('email').invalid && registerForm.get('email').touched">
+        <ion-col size-sm="6" offset-sm="3">
+          <p>Unesite validnu email adresu</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Lozinka</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="registerForm.get('password').invalid && registerForm.get('password').touched">
+        <ion-col size-sm="6" offset-sm="3">
+          <p>Lozinka treba da ima minimum 7 karaktera</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-button type="submit" color="secondary" shape="round" expand="block">Registruj se</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>
