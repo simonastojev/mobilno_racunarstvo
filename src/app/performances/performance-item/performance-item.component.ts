@@ -13,6 +13,4 @@ export class PerformanceItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {}
-
-
 }

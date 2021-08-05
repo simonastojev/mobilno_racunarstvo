@@ -8,7 +8,6 @@ export class Performance {
     public price: number,
     public actors: string,
     public imageUrl: string,
-    public userId: string) {}
-
-
+    public userId: string) {
+  }
 }
