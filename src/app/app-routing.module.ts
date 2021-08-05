@@ -23,6 +23,14 @@ const routes: Routes = [
     loadChildren: () => import('./auth/register/register.module').then( m => m.RegisterPageModule)
   },
   {
+    path: 'contact',
+    loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
+  },
+  {
+    path: 'reservations',
+    loadChildren: () => import('./reservations/reservations.module').then( m => m.ReservationsPageModule)
+  },
+  {
     path: 'admin-profile',
     loadChildren: () => import('./admin-profile/admin-profile.module').then( m => m.AdminProfilePageModule),
     canLoad: [AuthGuard]

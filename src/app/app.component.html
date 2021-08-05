@@ -14,14 +14,24 @@
             <ion-label>Moj profil</ion-label>
           </ion-item>
         </ion-menu-toggle>
-
+        <ion-menu-toggle>
+          <ion-item routerLink="/reservations">
+            <ion-icon name="cash-outline" slot="start" color="secondary"></ion-icon>
+            <ion-label>Rezervacije</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
         <ion-menu-toggle>
           <ion-item routerLink="/performances">
             <ion-icon name="document-text" slot="start" color="secondary"></ion-icon>
             <ion-label>Repertoar</ion-label>
           </ion-item>
         </ion-menu-toggle>
-
+        <ion-menu-toggle>
+          <ion-item routerLink="/contact">
+            <ion-icon name="call-outline" slot="start" color="secondary"></ion-icon>
+            <ion-label>Kontakt</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
         <ion-menu-toggle>
           <ion-item routerLink="/admin-users">
             <ion-icon name="people" slot="start" color="secondary"></ion-icon>
@@ -38,8 +48,5 @@
       </ion-list>
     </ion-content>
   </ion-menu>
-
   <ion-router-outlet id="main"></ion-router-outlet>
-
-
 </ion-app>

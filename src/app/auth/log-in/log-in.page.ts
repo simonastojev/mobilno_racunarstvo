@@ -20,7 +20,7 @@ export class LogInPage implements OnInit {
     this.isLoading = true;
     if(form.valid){
       this.authService.logIn(form.value).subscribe(resData => {
-        console.log("Prijava uspesna");
+        console.log('Prijava uspešna!');
         console.log(resData);
         this.isLoading = false;
         this.router.navigateByUrl('/performances');

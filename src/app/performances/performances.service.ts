@@ -1,19 +1,19 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Performance } from './performance.model';
-import {map, switchMap, take, tap} from 'rxjs/operators'
+import {map, switchMap, take, tap} from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 
 
 interface PerformanceData {
-  name: string,
-  date: Date,
-  place: string,
-  price: number,
-  actors: string,
-  imageUrl: string,
-  userId: string
+  name: string;
+  date: Date;
+  place: string;
+  price: number;
+  actors: string;
+  imageUrl: string;
+  userId: string;
 }
 
 @Injectable({
@@ -26,9 +26,10 @@ export class PerformancesService {
     {
       id: '1',
       name: 'Ujka Vanja - Čehov',
-      date: new Date("Fri May 21 2021 19:00:00"),
+      date: new Date('Fri May 21 2021 19:00:00'),
       place: 'Velika scena - Ljuba Tadić',
       price: 1200,
+      // eslint-disable-next-line max-len
       actors: 'Nenad Jezdić, Mihail Lavovič, Milica Gojković, Marija Vicković, Bogdan Diklić, Aleksandra Nikolić, Dubravko Jovanović, Branislav Lečić',
       imageUrl: 'https://www.jdp.rs/wp-content/uploads/2019/05/PLAKAT-Ujka-Vanja.jpg',
       userId: 'kjsks'
@@ -36,9 +37,10 @@ export class PerformancesService {
     {
       id: '2',
       name: 'Pučina - Nušić',
-      date: new Date("Tue May 11 2021 20:00:00"),
+      date: new Date('Tue May 11 2021 20:00:00'),
       place: 'Velika scena - Ljuba Tadić',
       price: 2000,
+      // eslint-disable-next-line max-len
       actors: 'Nenad Jezdić, Sloboda Mićalović, Ljubomir Bandović, Bojan Lazarov, Jovana Belović, Bogdana Obradović, Vesna Stankovič, Cvijeta Mesić, Bojan Dimitrijević, Nebojša Milovanović,Goran Šušljik, Maja Kolundžija Zoroe',
       imageUrl: 'https://www.jdp.rs/wp-content/uploads/2020/10/Pucina-Latinica.jpg',
       userId: 'djdsa'
@@ -47,6 +49,7 @@ export class PerformancesService {
   constructor(private http: HttpClient, private authService: AuthService) { }
 
   get performances() {
+    // eslint-disable-next-line no-underscore-dangle
     return this._performances.asObservable();
   }
 
@@ -78,6 +81,7 @@ export class PerformancesService {
       take(1),
       tap((performances) => {
         newPerformance.id = generatedId;
+        // eslint-disable-next-line no-underscore-dangle
         this._performances.next(performances.concat(newPerformance));
       })
     );
@@ -111,6 +115,7 @@ export class PerformancesService {
 
       for(const key in performancesData) {
         if(performancesData.hasOwnProperty(key)) {
+          // eslint-disable-next-line max-len
           performances.push(new Performance(key, performancesData[key].name, new Date(performancesData[key].date), performancesData[key].place, performancesData[key].price, performancesData[key].actors, performancesData[key].imageUrl, performancesData[key].userId)
           );
         }
@@ -118,6 +123,7 @@ export class PerformancesService {
       return performances;
     }),
       tap(performances => {
+        // eslint-disable-next-line no-underscore-dangle
         this._performances.next(performances);
       })
     );
@@ -130,9 +136,7 @@ export class PerformancesService {
 
   getPerformance(performanceId: string){
     return {
-      ...this.oldPerformances.find(performance => {
-        return performance.id === performanceId;
-      })
+      ...this.oldPerformances.find(performance => performance.id === performanceId)
     };
   }
 

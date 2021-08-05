@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title color="tertiary">Prijava</ion-title>
+    <ion-title align="center" color="tertiary">Prijava u aplikaciju</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -39,6 +39,14 @@
           </div>
           <ion-button type="submit" color="secondary" shape="round" expand="block" [disabled]="LogInForm.invalid" *ngIf="!isLoading">Uloguj se</ion-button>
         </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-label>Nemaš nalog?   </ion-label>
+        <ion-row>
+        </ion-row>
+        <!--  <ion-item routerLink="/register"> -->
+        <ion-button routerLink="/register" color="secondary" shape="round" color="secondary">Registruj se</ion-button>
+        <!--  </ion-item> -->
       </ion-row>
     </ion-grid>
   </form>
