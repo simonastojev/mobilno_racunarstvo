@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="tertiary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="tertiary">Dodaj novu rezervaciju</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #formAdd="ngForm" (ngSubmit)="onAddReservation(formAdd)">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Ime i prezime</ion-label>
+            <ion-input type="text" ngModel name="person"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Datum predstave</ion-label>
+            <ion-datetime type="text" displayFormat="MMM DD, YYYY HH:mm" ngModel name="date"></ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Cena</ion-label>
+            <ion-input type="number" ngModel name="price"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Mesto</ion-label>
+            <ion-input type="text" ngModel name="place"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-row>
+          <ion-col size-sm="3" offset-sm="3">
+            <ion-button type="submit" color="secondary" expand="block" shape="round">
+              Sačuvaj rezervaciju
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>
