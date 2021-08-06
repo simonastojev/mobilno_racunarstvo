@@ -1,7 +1,7 @@
-.image{
-  height:40em;
-  background-size:cover;
-  width:auto;
-  background-image:url(https://www.subotica.com/files/_thumb/645x430/news/7/0/9/37709/37709-pozoriste-ilustracija.jpg);
-  background-position:50% 50%;
+ion-content{
+  --background: none;
+  background-image: url('../../../src/assets/masks.png');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }

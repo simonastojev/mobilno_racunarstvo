@@ -1,18 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-import { PerformancesPage } from './performances.page';
 
-describe('PerformancesPage', () => {
-  let component: PerformancesPage;
-  let fixture: ComponentFixture<PerformancesPage>;
+import { MyResPage } from './my-res.page';
+
+describe('MyResPage', () => {
+  let component: MyResPage;
+  let fixture: ComponentFixture<MyResPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ PerformancesPage ],
+      declarations: [ MyResPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PerformancesPage);
+    fixture = TestBed.createComponent(MyResPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

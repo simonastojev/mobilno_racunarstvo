@@ -13,7 +13,6 @@ interface AuthResponseData {
   localId: string;
   expiresIn: string;
   registered?: boolean;
-
 }
 
 interface UserData {
@@ -21,7 +20,6 @@ interface UserData {
   surname?: string;
   email: string;
   password: string;
-
 }
 
 @Injectable({
@@ -34,10 +32,11 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   get isUserAuthenticated() {
+    // eslint-disable-next-line no-underscore-dangle
     return this._user.asObservable().pipe(
       map((user) => {
         if (user) {
-          return !!user.token;;
+          return !!user.token;
         } else {
           return false;
         }
@@ -46,6 +45,7 @@ export class AuthService {
   }
 
   get userId() {
+    // eslint-disable-next-line no-underscore-dangle
     return this._user.asObservable().pipe(
       map((user) => {
         if (user) {
@@ -58,6 +58,7 @@ export class AuthService {
   }
 
   get token() {
+    // eslint-disable-next-line no-underscore-dangle
     return this._user.asObservable().pipe(
       map((user) => {
         if (user) {
@@ -71,13 +72,16 @@ export class AuthService {
 
 
   register(user: UserData){
+    // eslint-disable-next-line no-underscore-dangle
     this._isUserAuthenticated = true;
     return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebaseAPIKey}`,
               {email: user.email, password: user.password, returnSecureToken: true})
             .pipe(
             tap((userData) => {
               const expirationTime = new Date(new Date().getTime() + +userData.expiresIn * 1000);
+              // eslint-disable-next-line @typescript-eslint/no-shadow
               const user = new User(userData.localId, userData.email, userData.idToken, expirationTime);
+              // eslint-disable-next-line no-underscore-dangle
               this._user.next(user);
 
             })
@@ -86,19 +90,24 @@ export class AuthService {
   }
 
   logIn(user: UserData){
+    // eslint-disable-next-line no-underscore-dangle
     this._isUserAuthenticated = true;
+    // eslint-disable-next-line max-len
     return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebaseAPIKey}`,
               {email: user.email, password: user.password, returnSecureToken: true})
             .pipe(
             tap((userData) => {
               const expirationTime = new Date(new Date().getTime() + +userData.expiresIn * 1000);
+              // eslint-disable-next-line @typescript-eslint/no-shadow
               const user = new User(userData.localId, userData.email, userData.idToken, expirationTime);
+              // eslint-disable-next-line no-underscore-dangle
               this._user.next(user);
             })
         );
   }
 
   logOut() {
+    // eslint-disable-next-line no-underscore-dangle
     this._user.next(null);
   }
 }

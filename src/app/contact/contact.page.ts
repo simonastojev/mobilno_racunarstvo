@@ -1,5 +1,4 @@
 import {Component, OnDestroy, OnInit, ElementRef, ViewChild} from '@angular/core';
-import { Geolocation } from '@ionic-native/geolocation/ngx';
 declare let google;
 
 @Component({

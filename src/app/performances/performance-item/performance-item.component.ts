@@ -10,7 +10,36 @@ import { PerformancesService } from '../performances.service';
 })
 export class PerformanceItemComponent implements OnInit {
   @Input() performanceItem: Performance;
-  constructor() { }
+  constructor(private alertCtrl: AlertController) { }
 
   ngOnInit() {}
+
+  openAlert(event) {
+    event.stopPropagation();
+    //  event.preventDefault();
+
+    this.alertCtrl
+      .create({
+        header: 'Čuvanje predstave',
+        message: 'Da li ste sigurni da želite da sačuvate predstavu?',
+        buttons: [
+          {
+            text: 'Sačuvaj',
+            handler: () => {
+              console.log('Save.');
+            },
+          },
+          {
+            text: 'Otkaži',
+            role: 'cancel',
+            handler: () => {
+              console.log('Do not save.');
+            },
+          },
+        ],
+      })
+      .then((alert) => alert.present());
+  }
+
+
 }

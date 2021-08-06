@@ -8,6 +8,7 @@ export class User {
     if (!this.tokenExpirationDate || this.tokenExpirationDate <= new Date()) {
       return null;
     }
+    // eslint-disable-next-line no-underscore-dangle
     return this._token;
   }
 }

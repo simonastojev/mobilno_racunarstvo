@@ -10,11 +10,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'performances',
-    loadChildren: () => import('./performances/performances.module').then( m => m.PerformancesPageModule),
-    canLoad: [AuthGuard]
-  },
-  {
     path: 'log-in',
     loadChildren: () => import('./auth/log-in/log-in.module').then( m => m.LogInPageModule)
   },
@@ -23,17 +18,22 @@ const routes: Routes = [
     loadChildren: () => import('./auth/register/register.module').then( m => m.RegisterPageModule)
   },
   {
+    path: 'admin-profile',
+    loadChildren: () => import('./admin-profile/admin-profile.module').then( m => m.AdminProfilePageModule),
+    canLoad: [AuthGuard]
+  },
+  {
+    path: 'performances',
+    loadChildren: () => import('./performances/performances.module').then( m => m.PerformancesPageModule),
+    canLoad: [AuthGuard]
+  },
+  {
     path: 'contact',
     loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
   },
   {
     path: 'reservations',
     loadChildren: () => import('./reservations/reservations.module').then( m => m.ReservationsPageModule)
-  },
-  {
-    path: 'admin-profile',
-    loadChildren: () => import('./admin-profile/admin-profile.module').then( m => m.AdminProfilePageModule),
-    canLoad: [AuthGuard]
   },
   {
     path: 'admin-users',

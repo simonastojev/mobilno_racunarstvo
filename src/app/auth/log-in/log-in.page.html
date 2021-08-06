@@ -17,7 +17,7 @@
             </ion-item>
 
             <ion-item lines="none" *ngIf="email.invalid && email.touched">
-              <ion-label>Unesite validnu email adresu</ion-label>
+              <ion-label>Unesite validnu e-mail adresu!</ion-label>
             </ion-item>
 
             <ion-item>
@@ -37,15 +37,16 @@
           <div class="ion-text-center">
             <ion-spinner color="primary" *ngIf="isLoading"></ion-spinner>
           </div>
-          <ion-button type="submit" color="secondary" shape="round" expand="block" [disabled]="LogInForm.invalid" *ngIf="!isLoading">Uloguj se</ion-button>
+          <ion-button expand="block" type="submit" color="secondary" shape="round" size="small" [disabled]="LogInForm.invalid" *ngIf="!isLoading">Uloguj se</ion-button>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
-        <ion-label>Nemaš nalog?   </ion-label>
+        <ion-label color="tertiary">Nemaš nalog?   </ion-label>
         <ion-row>
         </ion-row>
         <!--  <ion-item routerLink="/register"> -->
-        <ion-button routerLink="/register" color="secondary" shape="round" color="secondary">Registruj se</ion-button>
+        <ion-button
+          routerLink="/register" shape="round" color="secondary">Registruj se</ion-button>
         <!--  </ion-item> -->
       </ion-row>
     </ion-grid>

@@ -140,7 +140,6 @@ export class PerformancesService {
     };
   }
 
-
   deletePerformance(performanceId: string){
     /*this.oldPerformances = this.oldPerformances.filter(performance => {
       return performance.id !== performanceId;

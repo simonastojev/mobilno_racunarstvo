@@ -1,25 +1,36 @@
-import { Component, OnInit } from '@angular/core';
-import { PerformancesService } from './performances.service';
-import { Performance } from './performance.model';
-import {NgForm} from '@angular/forms';
-
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-performances',
   templateUrl: './performances.page.html',
   styleUrls: ['./performances.page.scss'],
 })
-export class PerformancesPage implements OnInit {
-  ngOnInit() {
+export class PerformancesPage implements OnInit, OnDestroy {
+  constructor() {
+    console.log('constructor');
   }
-  /*onAddReservation(form: NgForm) {
 
-    this.reservationService.addPerformance(form.value.name, form.value.date, form.value.place,
-      form.value.price, form.value.actors, form.value.imageUrl).subscribe(res => {
-      console.log(res);
-    });
+  ngOnInit() {
+    console.log('ngOnInit');
+  }
 
-    this.router.navigateByUrl('/performances/tabs/repertoire');
-    form.reset();
-  }*/
+  ionViewWillEnter() {
+    console.log('ionViewWillEnter');
+  }
+
+  ionViewDidEnter() {
+    console.log('ionViewDidEnter');
+  }
+
+  ionViewWillLeave() {
+    console.log('ionViewWillLeave');
+  }
+
+  ionViewDidLeave() {
+    console.log('ionViewDidLeave');
+  }
+
+  ngOnDestroy() {
+    console.log('ngOnDestroy');
+  }
 }

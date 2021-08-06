@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { PerformancesPage } from './performances.page';
 
 const routes: Routes = [
@@ -16,19 +15,13 @@ const routes: Routes = [
         path: 'add-new',
         loadChildren: () => import('./add-new/add-new.module').then( m => m.AddNewPageModule)
       },
-      {
-        path: '',
-        redirectTo: '/performances/tabs/repertoire',
-        pathMatch: 'full'
-      },
     ]
   },
   {
     path: '',
     redirectTo: '/performances/tabs/repertoire',
     pathMatch: 'full'
-  },
-
+  }
 
 ];
 

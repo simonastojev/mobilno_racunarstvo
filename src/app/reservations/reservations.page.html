@@ -1,24 +1,25 @@
-<ion-header>
+<!--<ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button color="tertiary" defaultHref="/performances"></ion-menu-button>
     </ion-buttons>
     <ion-title color="tertiary">Rezervacije</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header>-->
+<ion-body>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="my-res">
+        <ion-icon name="bookmark"></ion-icon>
+        <ion-label>Moje rezervacije</ion-label>
+      </ion-tab-button>
 
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="add-new">
+        <ion-icon name="add-circle"></ion-icon>
+        <ion-label>Rezerviši predstavu</ion-label>
+      </ion-tab-button>
 
-    <ion-tab-button tab="my-res">
-      <ion-icon name="document-text"></ion-icon>
-      <ion-label>Moje rezervacije</ion-label>
-    </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-body>
 
-    <ion-tab-button tab="add-new">
-      <ion-icon name="add"></ion-icon>
-      <ion-label>Rezerviši predstavu</ion-label>
-    </ion-tab-button>
-
-  </ion-tab-bar>
-</ion-tabs>
